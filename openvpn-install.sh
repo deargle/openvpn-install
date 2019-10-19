@@ -292,7 +292,8 @@ function installQuestions () {
 	echo "   10) Yandex Basic (Russia)"
 	echo "   11) AdGuard DNS (Russia)"
 	echo "   12) Custom"
-	until [[ "$DNS" =~ ^[0-9]+$ ]] && [ "$DNS" -ge 1 ] && [ "$DNS" -le 12 ]; do
+	echo "   13) None"
+	until [[ "$DNS" =~ ^[0-9]+$ ]] && [ "$DNS" -ge 1 ] && [ "$DNS" -le 13 ]; do
 		read -rp "DNS [1-12]: " -e -i 3 DNS
 			if [[ $DNS == 2 ]] && [[ -e /etc/unbound/unbound.conf ]]; then
 				echo ""
