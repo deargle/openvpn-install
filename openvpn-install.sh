@@ -834,9 +834,9 @@ verb 3" >> /etc/openvpn/server.conf
 	mkdir -p /var/log/openvpn
 
 	# Enable routing
-	echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.d/20-openvpn.conf
+	echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.d/99-openvpn.conf
 	if [[ "$IPV6_SUPPORT" = 'y' ]]; then
-		echo 'net.ipv6.conf.all.forwarding=1' >> /etc/sysctl.d/20-openvpn.conf
+		echo 'net.ipv6.conf.all.forwarding=1' >> /etc/sysctl.d/99-openvpn.conf
 	fi
 	# Apply sysctl rules
 	sysctl --system
